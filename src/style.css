@@ -3,11 +3,15 @@ div.left_ui {
   border: 3px;
   border-color: #666699;
   border-style: solid;
-  height: 500px;
+  height: 320px;
   width: 60px;
   border-radius: 20px;
   transition: 0.3s;
-  overflow: visible;
+  overflow: hidden;
+}
+
+div.ui{
+  display: flex;
 }
 
 div.luihead {
@@ -25,7 +29,15 @@ div.left_ui:hover {
   width: 280px;
 }
 
-div.left_ui:hover div.switchs{
+div.left_ui:hover div.switchs {
+  display: flex;
+}
+
+.searchs {
+  display: flex;
+}
+
+.danmus {
   display: flex;
 }
 
@@ -59,27 +71,80 @@ div.left_ui:hover div.switchs{
   opacity: 0.3;
 }
 
-div.searchs:hover{
+div.searchs:hover {
   border-radius: 5%;
   background-color: rgb(164, 164, 164);
 }
 
-div.downloads:hover{
+div.downloads:hover {
   border-radius: 5%;
   background-color: rgb(164, 164, 164);
 }
 
-div.danmus:hover{
+div.danmus:hover {
   border-radius: 5%;
   background-color: rgb(164, 164, 164);
 }
 
-div.switchs:hover{
+div.switchs:hover {
   border-radius: 5%;
   background-color: rgb(164, 164, 164);
 }
 
-div.left_ui:hover .line{
-  width:260px;
+div.left_ui:hover .line {
+  width: 260px;
   opacity: 0.6;
+}
+
+img.search-img{
+  width:10%;
+  border: none;
+}
+
+button{
+  background-color: #CCCCCC;
+  border-radius: 10px;
+  border-width: 2px;
+}
+
+button:hover{
+  background-color: #e8e8e8;
+}
+
+button:active{
+  background-color: #CCCCCC;
+}
+
+input.search-in{
+  width: 207px;
+  border-radius: 10px;
+  border-color: slategrey;
+  margin-bottom: 2px;
+  background-color: #CCCCCC;
+}
+
+.videoicons{
+  width: 300px;
+  border-color: white;
+  border-style: solid;
+  border-width: 5px;
+  margin-bottom: 0;
+}
+
+.videotext{
+  margin-top: 0;
+  text-align: center;
+}
+
+.videoset{
+  margin-left: 50px;
+  border-style:solid;
+  margin-bottom: 40px;
+  height: 210px;
+  background-image: url("../source/img/cool-background.png");
+  float: left;
+}
+
+.main{
+  width: 1500px;
 }
