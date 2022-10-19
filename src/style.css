@@ -1,4 +1,5 @@
 div.left_ui {
+  position: fixed;
   background-color: #CCCCCC;
   border: 3px;
   border-color: #666699;
@@ -10,9 +11,10 @@ div.left_ui {
   overflow: hidden;
 }
 
-div.ui{
+ div.ui{
   display: flex;
-}
+  float: left;
+} 
 
 div.luihead {
   width: 50px;
@@ -147,4 +149,14 @@ input.search-in{
 
 .main{
   width: 1500px;
+  margin-left: 40px;
+}
+
+.player{
+  width:1440px;
+  margin-left: 80px;
+  height:900px;
+  float:right;
+  border-style: solid;
+  margin-bottom: 10px;
 }
