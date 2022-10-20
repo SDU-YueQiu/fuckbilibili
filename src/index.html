@@ -40,35 +40,34 @@
                 <embed id="switch" src="../source/img/SVGs/tanmuOpen.svg" />
             </div>
         </div>
-        <video class="player" id="myplayer"></video>
+        <video onclick="mprint()" class="player" id="myplayer"></video>
         <script>
-            var myvideo=document.getElementById("myplayer");
-            myvideo.src="../source/video/i got smoke.mp4";
+            var myvideo = document.getElementById("myplayer");
         </script>
     </div>
     <div class="main">
-        <div class="videoset" id="igtdiv">
+        <div class="videoset" id="igtdiv" onclick="changevideo('igt')">
             <img id="igt" class="videoicons" title="竖起中指王源算个寄吧~" src="../source/img/i got smoke.png"
                 onclick="playvideo('igt')" />
             <p class="videotext">i got smoke</p>
         </div>
-        <div class="videoset">
+        <div class="videoset" onclick="changevideo('db')">
             <img class="videoicons" title="头套给你薅一地！" src="../source/img/db.png" />
             <p class="videotext">东百往事</p>
         </div>
-        <div class="videoset">
+        <div class="videoset" onclick="changevideo('dxl')">
             <img class="videoicons" title="我焯，电子刘路！" src="../source/img/dxl.png" />
             <p class="videotext">【東雪蓮】超甜翻唱❤️热爱250°C的你❤️</p>
         </div>
-        <div class="videoset">
+        <div class="videoset" onclick="changevideo('otto')">
             <img class="videoicons" title="一天不听有蚂蚁在身上爬" src="../source/img/otto.png" />
             <p class="videotext">国玉的战争</p>
         </div>
-        <div class="videoset">
+        <div class="videoset" onclick="changevideo('zood')">
             <img class="videoicons" title="1！5！" src="../source/img/zood.png" />
             <p class="videotext">丁真进军说唱圈,《Zood》空降B榜</p>
         </div>
-        <div class="videoset">
+        <div class="videoset" onclick="changevideo('h5G')">
             <img class="videoicons" title="不觉得很酷吗?" src="../source/img/h5G.png" />
             <p class="videotext">有多快？5G在日常使用中的真实体验</p>
         </div>

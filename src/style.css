@@ -11,10 +11,10 @@ div.left_ui {
   overflow: hidden;
 }
 
- div.ui{
+div.ui {
   display: flex;
   float: left;
-} 
+}
 
 div.luihead {
   width: 50px;
@@ -99,26 +99,26 @@ div.left_ui:hover .line {
   opacity: 0.6;
 }
 
-img.search-img{
-  width:10%;
+img.search-img {
+  width: 10%;
   border: none;
 }
 
-button{
+button {
   background-color: #CCCCCC;
   border-radius: 10px;
   border-width: 2px;
 }
 
-button:hover{
+button:hover {
   background-color: #e8e8e8;
 }
 
-button:active{
+button:active {
   background-color: #CCCCCC;
 }
 
-input.search-in{
+input.search-in {
   width: 207px;
   border-radius: 10px;
   border-color: slategrey;
@@ -126,7 +126,7 @@ input.search-in{
   background-color: #CCCCCC;
 }
 
-.videoicons{
+.videoicons {
   width: 300px;
   border-color: white;
   border-style: solid;
@@ -134,30 +134,34 @@ input.search-in{
   margin-bottom: 0;
 }
 
-.videotext{
+.videotext {
   margin-top: 0;
   text-align: center;
 }
 
-.videoset{
+.videoset {
   margin-left: 50px;
-  border-style:solid;
+  border-style: solid;
   margin-bottom: 40px;
   height: 210px;
   background-image: url("../source/img/cool-background.png");
   float: left;
 }
 
-.main{
+.main {
   width: 1500px;
   margin-left: 40px;
 }
 
-.player{
-  width:1540px;
-  margin-left: 80px;
-  height:900px;
-  float:right;
-  border-style: solid;
+.player {
+  width: 1440px;
+  margin-left: 90px;
+  height: 810px;
+  float: right;
+  border-style: inset;
+  border-radius: 20px;
+  border-width: 5px;
+  overflow: hidden;
   margin-bottom: 10px;
+  background-image: url('../source/img/template.png');
 }
