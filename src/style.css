@@ -29,6 +29,7 @@ div.luihead {
 
 div.left_ui:hover {
   width: 300px;
+  z-index: 1;
 }
 
 div.left_ui:hover div.switchs {
@@ -153,10 +154,13 @@ input.search-in{
 }
 
 .player{
-  width:1440px;
+  width:1540px;
   margin-left: 80px;
   height:900px;
   float:right;
   border-style: solid;
   margin-bottom: 10px;
+}
+.playerinner{
+  z-index: 1;
 }
