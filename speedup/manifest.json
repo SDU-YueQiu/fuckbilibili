@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+    "name": "speedup",
+    "version": "0.1",
+    "description": "speedup or slowdown bilibili's video",
+
+    "icons": {
+        "48": "source/icons/积木.svg",
+        "96": "source/icons/积木.svg"
+    },
+    "permission": [
+        "activeTab"
+    ],
+    "browser_action": {
+        "default_icon": "source/icons/积木.svg",
+        "default_title":"this is a fuking button",
+        "default_popup":"popup/Fking.html"
+    },
+
+    "web_accessible_resource":[
+        "source/img/frog.jpg",
+        "snake.jpg",
+        "turtle.jpg"
+    ]
+}
