@@ -82,6 +82,7 @@ div.searchs:hover {
 div.downloads:hover {
   border-radius: 5%;
   background-color: rgb(164, 164, 164);
+  cursor: pointer;
 }
 
 div.danmus:hover {
@@ -92,6 +93,7 @@ div.danmus:hover {
 div.switchs:hover {
   border-radius: 5%;
   background-color: rgb(164, 164, 164);
+  cursor: pointer;
 }
 
 div.left_ui:hover .line {
@@ -112,6 +114,7 @@ button {
 
 button:hover {
   background-color: #e8e8e8;
+  cursor: pointer;
 }
 
 button:active {
@@ -148,6 +151,10 @@ input.search-in {
   float: left;
 }
 
+.videoset:hover{
+  cursor: pointer;
+}
+
 .main {
   width: 1500px;
   margin-left: 40px;
@@ -164,4 +171,8 @@ input.search-in {
   overflow: hidden;
   margin-bottom: 10px;
   background-image: url('../source/img/template.png');
+}
+
+.player:hover{
+  cursor: pointer;
 }

@@ -18,7 +18,7 @@
             </div>
             <div class="line"></div>
             <div class="searchs">
-                <embed id="search" src="../source/img/SVGs/搜索.svg">
+                <img id="search" src="../source/img/SVGs/搜索.svg">
                 <form class="search-form" action="" method="post">
                     <input class="search-in" type="text" name="serchtext">
                     <button class="search-but"> <img class="search-img" src="../source/img/SVGs/搜索.svg" width=20px>
@@ -26,10 +26,10 @@
                 </form>
             </div>
             <div class="downloads">
-                <embed id="download" src="../source/img/SVGs/下载.svg">
+                <img id="download" src="../source/img/SVGs/下载.svg">
             </div>
             <div class="danmus">
-                <embed id="danmu" src="../source/img/SVGs/弹幕.svg">
+                <img id="danmu" src="../source/img/SVGs/弹幕.svg">
                 <form class="search-form" action="" method="post">
                     <input class="search-in" type="text" name="serchtext">
                     <button class="search-but"> <img class="search-img" src="../source/img/SVGs/提交.svg" width=20px>
@@ -37,10 +37,13 @@
                 </form>
             </div>
             <div class="switchs" id="swtdiv" onclick="change(1)">
-                <embed id="switch" src="../source/img/SVGs/tanmuOpen.svg" />
+                <img id="switch" src="../source/img/SVGs/tanmuOpen.svg" />
             </div>
         </div>
-        <video onclick="mprint()" class="player" id="myplayer"></video>
+        
+        <div>
+            <video onclick="pauseorplay(0)" class="player" id="myplayer"></video>
+        </div>
         <script>
             var myvideo = document.getElementById("myplayer");
         </script>
