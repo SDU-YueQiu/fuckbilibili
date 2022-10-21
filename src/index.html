@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fuckbilibili</title>
     <link rel="stylesheet" href="style.css">
-    <script src="scripts.js"></script>
 </head>
 
 <body background="../source/img/gray-wallpaper-2560x1440.jpg">
@@ -32,24 +31,49 @@
                 <img id="danmu" src="../source/img/SVGs/弹幕.svg">
                 <form class="search-form" action="" method="post">
                     <input class="search-in" type="text" name="danmutext">
-                    <button class="search-but" id="danmubut"> <img class="search-img" src="../source/img/SVGs/提交.svg" width=20px>
+                    <button class="search-but" id="danmubut"> <img class="search-img" src="../source/img/SVGs/提交.svg"
+                            width=20px>
                     </button>
                 </form>
             </div>
             <div class="switchs" id="swtdiv" onclick="change(1)">
                 <img id="switch" src="../source/img/SVGs/tanmuOpen.svg" />
             </div>
+
         </div>
-        
-        <div>
-            <video onclick="pauseorplay(0)" class="player" id="myplayer"></video>
+        <div id="playwindow" class="playwindow">
+            <div id="fullback" class="fullback">
+                <div id="playbox" class="playbox">
+                    <div id="videobox" class="videobox">
+                        <video id="thisvideo" class="thisvideo" poster="../source/img/doodad.png"
+                            src="../source/video/igt.mp4" width="600px"></video>
+                    </div>
+                    <div>
+                        <div class="progress" id="progress">
+                            <div class="now" id="now">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="consoles">
+                        <div class="l-group">
+                            <div id="play" class="play"><img id="innerplay" class="buts" src="../source/img/SVGs/学院-视频播放.svg" title="播放"></div>
+                            <div id="stop" class="stop"><img id="innerstop" class="buts" src="../source/img/SVGs/停止.svg"></div>
+                            <div class="time">
+                                <span id="nowtime"></span>/<span id="wholetime"></span>
+                            </div>
+                        </div>
+                        <div class="r-group">
+                            <div title="全屏播放" id="fullscreen" class="fullscreen" title="全屏"><i></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <aside id="maside"></aside>
         </div>
-        <button id="test" onclick="test">123</button>
-        <script>
-            var myvideo = document.getElementById("myplayer");
-        </script>
+        <script src="scripts.js"></script>
     </div>
-    <div class="main">
+    <div class="main" id="main">
         <div class="videoset" id="igtdiv" onclick="changevideo('igt')">
             <img id="igt" class="videoicons" title="竖起中指王源算个寄吧~" src="../source/img/i got smoke.png"
                 onclick="playvideo('igt')" />

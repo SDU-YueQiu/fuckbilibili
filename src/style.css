@@ -9,6 +9,7 @@ div.left_ui {
   border-radius: 20px;
   transition: 0.3s;
   overflow: hidden;
+  z-index: 10;
 }
 
 div.ui {
@@ -149,30 +150,133 @@ input.search-in {
   height: 210px;
   background-image: url("../source/img/cool-background.png");
   float: left;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
-.videoset:hover{
+.videoset:hover {
   cursor: pointer;
 }
 
 .main {
   width: 1500px;
   margin-left: 40px;
+  float: left;
 }
 
-.player {
-  width: 1440px;
-  margin-left: 90px;
-  height: 810px;
-  float: right;
-  border-style: inset;
+.playwindow {
+  display: flex;
+  width: 920px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  margin-left: 70px;
   border-radius: 20px;
-  border-width: 5px;
   overflow: hidden;
-  margin-bottom: 10px;
-  background-image: url('../source/img/template.png');
+  border-style:solid;
 }
 
-.player:hover{
+.playbox {
+  background-color: rgb(185, 185, 185);
+  width: 600px;
+  padding: 40px 10px 0px 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  width: 600px;
+  height: 3px;
+  background-color: #999999;
+  border-radius: 3px;
+  position: relative;
+}
+
+.progress .now {
+  width: 0;
+  height: 3px;
+  background-color: crimson;
+  border-radius: 3px;
+  transition: width 500ms;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.consoles {
+  display: flex;
+  justify-content: space-between;
+  height: 45px;
+  font-size: 13px;
+  color: white;
+}
+
+.l-group,
+.r-group {
+  display: flex;
+  padding: 10px;
+}
+
+#maside {
+  width: 200px;
+  flex: none;
+  background-color: #FEFCC9;
+}
+
+.fullscreen {
+  width: 15px;
+  height: 15px;
+  background-color: currentColor;
+  border-radius: 0px;
+  margin: 5px 0 0 10px;
+}
+
+.fullscreen i {
+  display: block;
+  width: inherit;
+  height: inherit;
+  background-color: rgb(185,185,185);
+  border-radius: 50%;
+}
+
+.play,
+.pause,
+.stop,
+.mute {
+  width: 25px;
+  height: 25px;
+  margin-right: 3px;
+  position: relative;
+}
+
+.buts {
+  width: 25px;
+  height: 25px;
+}
+
+.buts:hover {
+  filter: brightness(0.6);
+}
+
+#thisvideo{
+  border-radius: 10px;
+  overflow:hidden;
+  margin-bottom: 5px;
+}
+
+#thisvideo:hover {
   cursor: pointer;
+}
+
+.play:hover,
+.pause:hover,
+.stop:hover,
+.mute:hover,
+.fullscreen:hover {
+  color: rgb(156, 148, 136);
+  cursor: pointer;
+}
+
+.time{
+  line-height: 25px;
+  margin: 0px 10px;
 }
