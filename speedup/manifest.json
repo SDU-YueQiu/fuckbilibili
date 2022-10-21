@@ -1,5 +1,5 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "speedup",
     "version": "0.2",
     "description": "speedup or slowdown the video.Switch the web page to night mode.",
@@ -9,11 +9,18 @@
     "content_scripts": [
         {
             "matches": [
-                "*://*.bilibili.com/video/*"
+                "*://*.bilibili.com/*"
             ],
             "js": [
                 "speedup.js"
-            ]
+            ],
+            "run_at":"document_end"
         }
+    ],
+    "permissions":[
+        "tabs"
+    ],
+    "host_permissions":[
+        "*://*.bilibili.com/*"
     ]
 }
