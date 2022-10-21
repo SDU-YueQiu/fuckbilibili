@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "speedup",
-    "version": "0.2",
+    "version": "0.3",
     "description": "speedup or slowdown the video.Switch the web page to night mode.",
     "icons": {
         "48": "source/icons/积木.svg"
@@ -9,7 +9,7 @@
     "content_scripts": [
         {
             "matches": [
-                "*://*.bilibili.com/*"
+                "<all_urls>"
             ],
             "js": [
                 "speedup.js"
