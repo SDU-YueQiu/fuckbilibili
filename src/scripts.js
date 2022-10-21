@@ -31,3 +31,9 @@ function pauseorplay(now) {
         else myvideo.play();
     }
 }
+
+function test()
+{
+    let alldiv=document.querySelectorAll('div');
+    alldiv.setAttribute("background-color","black");
+}

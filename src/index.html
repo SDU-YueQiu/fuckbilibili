@@ -31,8 +31,8 @@
             <div class="danmus">
                 <img id="danmu" src="../source/img/SVGs/弹幕.svg">
                 <form class="search-form" action="" method="post">
-                    <input class="search-in" type="text" name="serchtext">
-                    <button class="search-but"> <img class="search-img" src="../source/img/SVGs/提交.svg" width=20px>
+                    <input class="search-in" type="text" name="danmutext">
+                    <button class="search-but" id="danmubut"> <img class="search-img" src="../source/img/SVGs/提交.svg" width=20px>
                     </button>
                 </form>
             </div>
@@ -44,6 +44,7 @@
         <div>
             <video onclick="pauseorplay(0)" class="player" id="myplayer"></video>
         </div>
+        <button id="test" onclick="test">123</button>
         <script>
             var myvideo = document.getElementById("myplayer");
         </script>
