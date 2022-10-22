@@ -7,8 +7,12 @@ if (input == 'n') {
     document.querySelector(".bili-header__bar").style.backgroundColor = "#3d3d3d";
     document.querySelector(".reply-tag-item").style.backgroundColor = "#3d3d3d";
     document.querySelector("#nav-searchform").style.backgroundColor = "#3d3d3d";
+    document.querySelector(".desc-info-text").style.color="white";
+    document.querySelector(".video-title").style.color="white";
+    document.querySelector(".desc-info-text").style.color="white";
 }
 else {
-    var fkvideo = document.querySelector('video');
-    fkvideo.playbackRate=input;
+    document.querySelector(".bpx-player-ctrl-playbackrate-menu-item").value=input;
+    document.querySelector(".bpx-player-ctrl-playbackrate-menu-item").setAttribute("data-value",input);
+    document.querySelector(".bpx-player-ctrl-playbackrate-menu-item").innerHTML=input;
 }
