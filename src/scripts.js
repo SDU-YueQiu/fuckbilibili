@@ -245,6 +245,19 @@ document.getElementById("slider-control").onmousedown=function(e){
 }
 
 function showbarrge(){
+    if(barrge.data.length==0) return;
+    if(barrge.data[0].time>barrge.curtime) return;
+    var data=barrge.data.shift();
+    var div=document.createElement("div");
+    var span=document.createElement("span");
+    var name=document.createTextNode(data.username+":");
+    span.appendChild(name);
+    div.appendChild(span);
+    var text =document.createTextNode(data.text);
+    div.appendChild(text);
+    var mlist=document.getElementById("mlist");
+    mlist.appendChild(div);
+    mlist.scrollTop=mlist.scrollHeight;
     var barrges=document.getElementById("barrges");
     var width=parseInt(barrges.style.width);
     var height=parseInt(barrges.style.height);
@@ -271,4 +284,27 @@ function clearbarrge(){
     document.getElementById("barrges").innerHTML="";
     barrge.data.length=0;
     barrge.curtime=0;
+}
+
+video.ontimeupdate=function(){
+    barrge.curtime=video.currentTime;
+    showbarrge();
+}
+
+document.getElementById("sbtn").onclick=function(){
+    if(video.currentTime<=0) return;
+    var t=document.getElementById("stext").value;
+    if(t.length==0) return;
+    barrge.data.unshift({
+        time:video.currentTime,
+        username:"爷",
+        text:t
+    });
+    document.getElementById("stext").value="";
+    var data=typeof(barrgedata)=="undefined"?barrgeDate:barrgedate;
+    data.push({
+        time:video.currentTime,
+        username:"爷",
+        text:t
+    });
 }
