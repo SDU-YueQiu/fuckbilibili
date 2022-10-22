@@ -9,7 +9,7 @@ div.left_ui {
   border-radius: 20px;
   transition: 0.3s;
   overflow: hidden;
-  z-index: 200;
+  z-index: 100;
 }
 
 div.ui {
@@ -30,7 +30,7 @@ div.luihead {
 
 div.left_ui:hover {
   width: 300px;
-  z-index: 1;
+  z-index: 100;
 }
 
 div.left_ui:hover div.switchs {
@@ -364,7 +364,7 @@ input.search-in {
   position: absolute;
   bottom: 25px;
   left: 0;
-  z-index: 2;
+  z-index: 200;
   display: none;
   transition: 300ms;
   opacity: 0;
