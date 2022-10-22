@@ -47,30 +47,53 @@
                     <div id="videobox" class="videobox">
                         <video id="thisvideo" class="thisvideo" poster="../source/img/doodad.png"
                             src="../source/video/igt.mp4" width="600px"></video>
+                        <div id="barrges" class="barrges"></div>
                     </div>
                     <div>
                         <div class="progress" id="progress">
-                            <div class="now" id="now">
-
-                            </div>
+                            <div class="now" id="now"></div>
                         </div>
                     </div>
                     <div class="consoles">
                         <div class="l-group">
-                            <div id="play" class="play"><img id="innerplay" class="buts" src="../source/img/SVGs/学院-视频播放.svg" title="播放"></div>
-                            <div id="stop" class="stop"><img id="innerstop" class="buts" src="../source/img/SVGs/停止.svg"></div>
+                            <div id="play" class="play"><img id="innerplay" class="buts"
+                                    src="../source/img/SVGs/学院-视频播放.svg" title="播放"></div>
+                            <div id="stop" class="stop"><img id="innerstop" class="buts"
+                                    src="../source/img/SVGs/停止.svg"></div>
                             <div class="time">
                                 <span id="nowtime"></span>/<span id="wholetime"></span>
                             </div>
+                            <div class="barrgebut" id="barrgebut" onclick="change(1)">
+                                <img class="buts" id="barrge-icon" src="../source/img/SVGs/tanmuOpen.svg">
+                            </div>
                         </div>
                         <div class="r-group">
+                            <div id="speed" class="speed">
+                                <div id="curspeed">倍速 1&times;</div>
+                                <div id="speed_list" class="speed_list">
+                                    <div value="2">2&times;</div>
+                                    <div value="1.5">1.5&times;</div>
+                                    <div value="1.25">1.25&times;</div>
+                                    <div value="1.0">1.0&times;</div>
+                                    <div value="0.75">0.75&times;</div>
+                                    <div value="0.5">0.5&times;</div>
+                                </div>
+                            </div>
+                            <div id="mute" class="mute" title="静音"><img id="muteicons" class="buts" src="../source/img/SVGs/声音开.svg"></div>
+                            <div id="volume" class="volume">
+                                <div id="curvolume" class="curvolume"></div>
+                                <div id="slider-control" class="slider-control"></div>
+                            </div>
                             <div title="全屏播放" id="fullscreen" class="fullscreen" title="全屏"><i></i></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <aside id="maside"></aside>
+            <aside id="maside">
+                <p id="inneraside">选个视频播放吧喵~</p>
+            </aside>
         </div>
+        <script src="simulate.js"></script>
         <script src="scripts.js"></script>
     </div>
     <div class="main" id="main">

@@ -170,31 +170,33 @@ input.search-in {
   margin: 0 auto;
   margin-bottom: 30px;
   margin-left: 70px;
-  border-radius: 20px;
-  overflow: hidden;
-  border-style:solid;
 }
 
 .playbox {
   background-color: rgb(185, 185, 185);
   width: 600px;
   padding: 40px 10px 0px 10px;
-  border-radius: 10px;
-  overflow: hidden;
+  border-radius: 20px;
+  border-style: solid;
 }
 
 .progress {
+  margin-top: 5px;
   width: 600px;
-  height: 3px;
-  background-color: #999999;
+  height: 6px;
+  background-color: #888888;
   border-radius: 3px;
   position: relative;
 }
 
+.progress:hover {
+  cursor: pointer;
+}
+
 .progress .now {
   width: 0;
-  height: 3px;
-  background-color: crimson;
+  height: 6px;
+  background-color: rgb(38, 0, 255);
   border-radius: 3px;
   transition: width 500ms;
   position: absolute;
@@ -207,6 +209,7 @@ input.search-in {
   justify-content: space-between;
   height: 45px;
   font-size: 13px;
+  margin-top: -5px;
   color: white;
 }
 
@@ -219,7 +222,10 @@ input.search-in {
 #maside {
   width: 200px;
   flex: none;
-  background-color: #FEFCC9;
+  margin-left: 8px;
+  background-color: rgb(185, 185, 185);
+  border-radius: 20px;
+  border-style: solid;
 }
 
 .fullscreen {
@@ -234,7 +240,7 @@ input.search-in {
   display: block;
   width: inherit;
   height: inherit;
-  background-color: rgb(185,185,185);
+  background-color: rgb(185, 185, 185);
   border-radius: 50%;
 }
 
@@ -255,16 +261,26 @@ input.search-in {
 
 .buts:hover {
   filter: brightness(0.6);
+  cursor: pointer;
 }
 
-#thisvideo{
+#thisvideo {
   border-radius: 10px;
-  overflow:hidden;
+  overflow: hidden;
   margin-bottom: 5px;
 }
 
 #thisvideo:hover {
   cursor: pointer;
+}
+
+.muted:hover {
+  cursor: pointer;
+}
+
+.videobox {
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .play:hover,
@@ -276,7 +292,121 @@ input.search-in {
   cursor: pointer;
 }
 
-.time{
+.time {
   line-height: 25px;
   margin: 0px 10px;
 }
+
+.speed {
+  width: 80px;
+  text-align: center;
+  line-height: 25px;
+  padding: 0 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.speed .speed_list {
+  width: 100%;
+  border: solid 1px #000000;
+  background-color: rgb(185, 185, 185);
+  border-radius: 5px;
+  line-height: 35px;
+  position: absolute;
+  bottom: 25px;
+  left: 0;
+  z-index: 2;
+  display: none;
+  transition: 300ms;
+  opacity: 0;
+}
+
+.speed .speed_list div:hover {
+  background-color: rgb(70, 70, 70);
+}
+
+.speed:hover .speed_list {
+  display: block;
+  opacity: 1;
+}
+
+.volume {
+  width: 60px;
+  height: 5px;
+  background-color: #CCCCCC;
+  border-radius: 4px;
+  position: relative;
+  margin-top: 9px;
+  margin-left: 5px;
+  margin-right: 15px;
+}
+
+.volume .curvolume {
+  width: 60px;
+  height: inherit;
+  background-color: rgb(38, 0, 255);
+  border-radius: 4px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transition: 200ms;
+}
+
+.volume .slider-control{
+  width: 13px;
+  height:13px;
+  background-color: white;
+  border-radius: 50%;
+  border: solid 1px #666666;
+  position: absolute;
+  top: -5px;
+  left: 51px;
+  opacity: 0;
+  transition: 200ms;
+}
+
+.volume:hover .slider-control{
+  opacity: 1;
+  cursor: pointer;
+}
+
+#inneraside{
+  text-align: center;
+}
+
+.barrgebut{
+  margin-left: 5px;
+}
+
+@keyframes barrgeAnimation{
+  0%{
+    right:0;
+    transform: translate(100%,0);
+  }
+  100%{
+    right: 100%;
+    transform: translate(0,0);
+  }
+}
+
+.barrges{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 8;
+  overflow: hidden;
+  margin-left: 90px;
+  border-radius: 10px;
+  margin-top: 50px;
+}
+
+.barrges div{
+  position: absolute;
+  right: 100%;
+  font-size: 20px;
+  color: #fefcf9;
+  white-space: nowrap;
+  text-shadow: 0 0 2px #999;
+  animation: barrgeAnimation ease-in 10s;
+}
+
