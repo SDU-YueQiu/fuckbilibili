@@ -10,20 +10,20 @@ var curpos = 60;
 var halfslider = 6;
 var rflag = false;
 var barrgeData;
-var barrge={
-    data:[],
-    curtime:0
+var barrge = {
+    data: [],
+    curtime: 0
 };
-var isreplay=false;
+var isreplay = false;
 
-function getbarrge(){
-    if(typeof(barrgedate)!="undefined"){
-        barrgeData=barrgedate;
+function getbarrge() {
+    if (typeof (barrgedate) != "undefined") {
+        barrgeData = barrgedate;
     }
-    if(barrgeData.length==0) return;
-    barrge.data=barrge.data.concat(barrgeData);
-    barrge.data.sort(function(a,b){
-        return a.time-b.time;
+    if (barrgeData.length == 0) return;
+    barrge.data = barrge.data.concat(barrgeData);
+    barrge.data.sort(function (a, b) {
+        return a.time - b.time;
     });
 }
 
@@ -76,10 +76,10 @@ function play() {
         curtime();
         setprogress();
     }, 1000);
-    if(isreplay){
+    if (isreplay) {
         clearbarrge();
         getbarrge();
-        isreplay=false;
+        isreplay = false;
     }
 }
 
@@ -118,7 +118,8 @@ function mystop() {
     pause();
     video.currentTime = 0;
     setprogress();
-    isreplay=true;
+    isreplay = true;
+    clearbarrge();
 }
 
 document.getElementById("stop").onclick = function () {
@@ -148,24 +149,40 @@ function change(now) {
         document.getElementById("swtdiv").setAttribute("onclick", "change(0)");
         document.getElementById("barrge-icon").setAttribute("src", "../source/img/SVGs/tanmuClose.svg");
         document.getElementById("barrgebut").setAttribute("onclick", "change(0)");
-        document.getElementById("barrges").style.opacity=0;
+        document.getElementById("barrges").style.opacity = 0;
     }
     else {
         document.getElementById("switch").setAttribute("src", "../source/img/SVGs/tanmuOpen.svg");
         document.getElementById("swtdiv").setAttribute("onclick", "change(1)");
         document.getElementById("barrge-icon").setAttribute("src", "../source/img/SVGs/tanmuOpen.svg");
         document.getElementById("barrgebut").setAttribute("onclick", "change(1)");
-        document.getElementById("barrges").style.opacity=1;
+        document.getElementById("barrges").style.opacity = 1;
     }
 }
 
 function changevideo(name) {
-    document.getElementById("myplayer").setAttribute("onclick", "pauseorplay(1)");
+    mystop();
     switch (name) {
         default:
             alert("你是怎么触发这个弹窗的¿");
             break;
         case 'igt':
+            video.src = "../source/video/igt.mp4";
+            break;
+        case 'db':
+            video.src = "../source/video/db.mp4";
+            break;
+        case 'dxl':
+            video.src = "../source/video/dxl.mp4";
+            break;
+        case 'otto':
+            video.src = "../source/video/otto.mp4";
+            break;
+        case 'zood':
+            video.src = "../source/video/zood.mp4";
+            break;
+        case 'h5G':
+            video.src = "../source/video/h5G.mp4";
             break;
     }
 }
@@ -223,88 +240,102 @@ function setpos(pos) {
     video.volume = curpos / volumewidth;
 }
 
-document.getElementById("volume").onclick=function(e){
-    if(!rflag){
+document.getElementById("volume").onclick = function (e) {
+    if (!rflag) {
         setpos(e.offsetX);
     }
-    rflag=false;
+    rflag = false;
 }
 
-document.getElementById("slider-control").onmousedown=function(e){
-    rflag=true;
-    var x=e.clientX*0.05;
-    document.onmousemove=function(ev){
-        var mx=ev.clientX*0.05;
-        var ls=mx-x+curpos;
+document.getElementById("slider-control").onmousedown = function (e) {
+    rflag = true;
+    var x = e.clientX * 0.05;
+    document.onmousemove = function (ev) {
+        var mx = ev.clientX * 0.05;
+        var ls = mx - x + curpos;
         setpos(ls);
     };
-    document.onmouseup=function(){
-        document.onmousemove=null;
+    document.onmouseup = function () {
+        document.onmousemove = null;
         return;
     }
 }
 
-function showbarrge(){
-    if(barrge.data.length==0) return;
-    if(barrge.data[0].time>barrge.curtime) return;
-    var data=barrge.data.shift();
-    var div=document.createElement("div");
-    var span=document.createElement("span");
-    var name=document.createTextNode(data.username+":");
+function showbarrge() {
+    if (barrge.data.length == 0) return;
+    if (barrge.data[0].time > barrge.curtime) return;
+    var data = barrge.data.shift();
+    var div = document.createElement("div");
+    var span = document.createElement("span");
+    var name = document.createTextNode(data.username + ":");
     span.appendChild(name);
     div.appendChild(span);
-    var text =document.createTextNode(data.text);
+    var text = document.createTextNode(data.text);
     div.appendChild(text);
-    var mlist=document.getElementById("mlist");
+    var mlist = document.getElementById("mlist");
     mlist.appendChild(div);
-    mlist.scrollTop=mlist.scrollHeight;
-    var barrges=document.getElementById("barrges");
-    var width=parseInt(barrges.style.width);
-    var height=parseInt(barrges.style.height);
-    if(width<=0) return;
-    var top=Math.random()*(height-20);
-    var dt=6;
-    if(width>600) dt+=2;
-    if(width>800) dt+=2;
-    if(width>1000) dt+=2;
-    var dmtime=Math.random()*10+dt;
-    if(data.text.length>10) dmtime+=5;
-    if(data.text.length>20) dmtime+=4;
-    if(data.text.length>30) dmtime+=3;
-    var d2=document.createElement("div");
-    var t=document.createTextNode(data.text);
-    var attr=document.createAttribute("style");
-    attr.value="top:"+top+"px;"+"animation-duration:"+dmtime;
+    mlist.scrollTop = mlist.scrollHeight;
+    var barrges = document.getElementById("barrges");
+    var width = parseInt(barrges.style.width);
+    var height = parseInt(barrges.style.height);
+    if (width <= 0) return;
+    var top = Math.random() * (height - 20);
+    var dt = 6;
+    if (width > 600) dt += 2;
+    if (width > 800) dt += 2;
+    if (width > 1000) dt += 2;
+    var dmtime = Math.random() * 10 + dt;
+    if (data.text.length > 10) dmtime += 5;
+    if (data.text.length > 20) dmtime += 4;
+    if (data.text.length > 30) dmtime += 3;
+    var d2 = document.createElement("div");
+    var t = document.createTextNode(data.text);
+    var attr = document.createAttribute("style");
+    attr.value = "top:" + top + "px;" + "animation-duration:" + dmtime;
     d2.setAttributeNode(attr);
     d2.appendChild(t);
     barrges.appendChild(d2);
 }
 
-function clearbarrge(){
-    document.getElementById("barrges").innerHTML="";
-    barrge.data.length=0;
-    barrge.curtime=0;
+function clearbarrge() {
+    document.getElementById("barrges").innerHTML = "";
+    barrge.data.length = 0;
+    barrge.curtime = 0;
 }
 
-video.ontimeupdate=function(){
-    barrge.curtime=video.currentTime;
+video.ontimeupdate = function () {
+    barrge.curtime = video.currentTime;
     showbarrge();
 }
 
-document.getElementById("sbtn").onclick=function(){
-    if(video.currentTime<=0) return;
-    var t=document.getElementById("stext").value;
-    if(t.length==0) return;
+document.getElementById("sbtn").onclick = function () {
+    if (video.currentTime <= 0) return;
+    var t = document.getElementById("stext").value;
+    if (t.length == 0) return;
     barrge.data.unshift({
-        time:video.currentTime,
-        username:"爷",
-        text:t
+        time: video.currentTime,
+        username: "爷",
+        text: t
     });
-    document.getElementById("stext").value="";
-    var data=typeof(barrgedata)=="undefined"?barrgeDate:barrgedate;
+    document.getElementById("stext").value = "";
+    var data = typeof (barrgedata) == "undefined" ? barrgeDate : barrgedate;
     data.push({
-        time:video.currentTime,
-        username:"爷",
-        text:t
+        time: video.currentTime,
+        username: "爷",
+        text: t
     });
 }
+
+document.getElementById("download").onclick = function () {
+    fetch(video.src).then(res => res.blob()).then(blob => {
+        const a = document.createElement('a');
+        document.body.appendChild(a)
+        a.style.display = 'none'
+        const url = window.URL.createObjectURL(blob);
+        a.href = url;
+        a.download = '视频.mp4';
+        a.click();
+        document.body.removeChild(a)
+        window.URL.revokeObjectURL(url);
+    })
+};

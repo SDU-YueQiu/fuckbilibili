@@ -230,7 +230,7 @@ input.search-in {
   border-style: solid;
 }
 
-.mlist{
+.mlist {
   flex: auto;
   border: solid 0px #008B8B;
   border-radius: 20px;
@@ -240,21 +240,21 @@ input.search-in {
   overflow-y: auto;
 }
 
-.mlist div{
+.mlist div {
   margin-top: 5px;
 }
 
-.mlist span{
+.mlist span {
   color: #6b0fff;
 }
 
-.send{
+.send {
   height: 30px;
   display: flex;
   margin-top: 4px;
 }
 
-.send .stext{
+.send .stext {
   flex: auto;
   position: relative;
   bottom: 3px;
@@ -264,14 +264,14 @@ input.search-in {
   margin-right: 2px;
 }
 
-.send .sbtn{
+.send .sbtn {
   width: 65px;
   height: 30px;
-  color:white;
+  color: white;
   background-color: #a8a8a8;
   border-radius: 20px;
   border-width: 1px;
-  position:relative;
+  position: relative;
   bottom: 3px;
 }
 
@@ -401,9 +401,9 @@ input.search-in {
   transition: 200ms;
 }
 
-.volume .slider-control{
+.volume .slider-control {
   width: 13px;
-  height:13px;
+  height: 13px;
   background-color: white;
   border-radius: 50%;
   border: solid 1px #666666;
@@ -414,27 +414,28 @@ input.search-in {
   transition: 200ms;
 }
 
-.volume:hover .slider-control{
+.volume:hover .slider-control {
   opacity: 1;
   cursor: pointer;
 }
 
-.barrgebut{
+.barrgebut {
   margin-left: 5px;
 }
 
-@keyframes barrgeAnimation{
-  0%{
-    right:0;
-    transform: translate(100%,0);
+@keyframes barrgeAnimation {
+  0% {
+    right: 0;
+    transform: translate(100%, 0);
   }
-  100%{
+
+  100% {
     right: 100%;
-    transform: translate(0,0);
+    transform: translate(0, 0);
   }
 }
 
-.barrges{
+.barrges {
   position: absolute;
   top: 0;
   left: 0;
@@ -445,7 +446,7 @@ input.search-in {
   margin-top: 50px;
 }
 
-.barrges div{
+.barrges div {
   position: absolute;
   right: 100%;
   font-size: 20px;
@@ -454,4 +455,3 @@ input.search-in {
   text-shadow: 0 0 2px #999;
   animation: barrgeAnimation ease-in 10s;
 }
-
